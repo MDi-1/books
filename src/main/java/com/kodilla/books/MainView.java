@@ -8,7 +8,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.Route;
 
-@Route
+@Route(value = "kodilla", layout = MainLayout.class) // dodano od siebie w celu utworzenia piaskownicy
 public class MainView extends VerticalLayout {
 
     private BookService bookService = BookService.getInstance();
@@ -31,6 +31,7 @@ public class MainView extends VerticalLayout {
         HorizontalLayout mainContent = new HorizontalLayout(grid, form);
         mainContent.setSizeFull();
         grid.setSizeFull();
+        form.setWidth("30%");
         add(toolbar, mainContent);
         form.setBook(null);
 
