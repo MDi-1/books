@@ -9,7 +9,7 @@ import com.vaadin.flow.router.Route;
 @Route(value = "test", layout = MainLayout.class)
 public class TestView extends VerticalLayout { // ta klasa to piaskownica, nie było tego na kursie
 
-    private Repo repo = new Repo();
+    private Repo repo;
     private TestView2 view2;
     private final VerticalLayout box = new VerticalLayout();
     private final Button button = new Button("modify text");
@@ -18,7 +18,8 @@ public class TestView extends VerticalLayout { // ta klasa to piaskownica, nie b
     private final Button setButton = new Button("set to repo");
     private final Button checkBtn = new Button("check field");
 
-    public TestView() {
+    public TestView(Repo repo) {
+        this.repo = repo;
         createSomeContent();
         view2 = new TestView2(repo);
     }
